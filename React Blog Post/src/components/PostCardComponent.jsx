@@ -1,16 +1,26 @@
 import React from "react";
 import styles from './PostCardComponent.module.css';
 
-function PostCardComponent() {
+function PostCardComponent({ title, image, content, tags }) {
     return (
         <div className={styles.card}>
             <div className={styles.imagePlaceholder}>
-                <span>600 x 400</span>
+                <img src={image || "https://placehold.co/600x400"} alt={title} className={styles.image}></img>
             </div>
             <div className={styles.content}>
-                <h2 className={styles.title}>Titolo del post</h2>
-                <p className={styles.description}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta minima consequatur odit voluptate cupiditate nesciunt. Molestiae, sequi ipsa? Sint enim officiis delectus porro corporis!</p>
-                <button className={styles.button}>Leggi di più</button>
+                <h2 className={styles.title}>{title}</h2>
+                <p className={styles.description}>{content}</p>
+                <div className={styles.tags}>
+                    {tags.map((tag, index) => (
+                        <span
+                            key={index}
+                            className={`${styles.tag} ${styles[`tag-${tag}`]}`}
+                        >
+                            {tag}
+                        </span>
+                    ))}
+                </div>
+                <button className={styles.button} onClick={() => alert(`Hai cliccato su "${title}"!`)}>Leggi di più</button>
             </div>
         </div>
     );
