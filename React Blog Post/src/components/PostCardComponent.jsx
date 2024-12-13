@@ -2,6 +2,9 @@ import React from "react";
 import styles from './PostCardComponent.module.css';
 
 function PostCardComponent({ title, image, content, tags }) {
+    const handleButtonClick = () => {
+        alert(`Hai cliccato su "${title}"!`);
+    };
     return (
         <div className={styles.card}>
             <div className={styles.imagePlaceholder}>
