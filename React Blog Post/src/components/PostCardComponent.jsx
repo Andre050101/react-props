@@ -13,7 +13,7 @@ function PostCardComponent({ title, image, content, tags }) {
             <div className={styles.content}>
                 <h2 className={styles.title}>{title}</h2>
                 <p className={styles.description}>{content}</p>
-                <div className={styles.tags}>
+                <div className={styles.tagsContainer}>
                     {tags.map((tag, index) => (
                         <span
                             key={index}

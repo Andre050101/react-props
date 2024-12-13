@@ -33,6 +33,10 @@
     margin-bottom: 1rem;
 }
 
+.tags-container {
+    margin-top: 1rem;
+}
+
 .tag {
     display: inline-block;
     padding: 0.2rem 0.5rem;
